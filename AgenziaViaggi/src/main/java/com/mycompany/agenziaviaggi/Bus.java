@@ -8,14 +8,22 @@ package com.mycompany.agenziaviaggi;
  *
  * @author isaac
  */
-public class Bus
+public class Bus implements Runnable
 {
     private String licensePlate;
     private String language;
+    private int nPeople;
     
-    public Bus(String l)
+    public Bus(String l, int np)
     {
-        licensePlate = "BU" + Math.random()*100 + "HJ";
+        licensePlate = "BU" + Math.random()*1000 + "HJ";
         language = l;
+        nPeople = np;
+    }
+    
+    public void run()
+    { 
+        System.out.println("Il bus " + language + " sta partendo");
+        
     }
 }
